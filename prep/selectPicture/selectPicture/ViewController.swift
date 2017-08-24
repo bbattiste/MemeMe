@@ -30,8 +30,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textFieldTop.textAlignment = .center
         textFieldBottom.textAlignment = .center
     }
-    var a = ""
-    
     
     override func viewWillAppear(_ animated: Bool) {
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
