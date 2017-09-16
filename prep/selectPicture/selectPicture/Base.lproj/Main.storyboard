@@ -51,6 +51,9 @@
                                 <rect key="frame" x="16" y="20" width="85" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareTextWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s8l-g8-Xg1"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" adjustsFontSizeToFit="NO" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="fwE-O0-U1C">
                                 <rect key="frame" x="113" y="156" width="148" height="24"/>

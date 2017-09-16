@@ -17,6 +17,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var textFieldTop: UITextField!
     @IBOutlet weak var textFieldBottom: UITextField!
     
+    var memedImage: UIImage!
+    
     //set textfield attribute dictionary
     let memeTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: UIColor.black,
@@ -70,7 +72,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func keyboardWillShow(_ notification: Notification) {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        if textFieldBottom.isEditing {
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
+        if textFieldTop.isEditing {
+            view.frame.origin.y = 0
+        }
     }
     
     func keyboardWillHide(_ notification:Notification) {
@@ -152,11 +159,33 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         var memedImage: UIImage!
     }
     
+    
+    // not sure if this what I'm looking for
+    @IBAction func shareText(sender: UIButton) {
+        memedImage = generateMemedImage()
+        let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: nil)
+        
+        // completion handler used for activity view completion
+        activityViewController.completionWithItemsHandler = { (activityType: UIActivityType?, completed: Bool, returnedItemds: [Any]?, error: Error?) -> Void in
+            if completed {
+                self.save()
+            }
+        }
+    
+    }
+    // what would be in any
+    
+    
     func save() {
         // Create the meme
         let meme = Meme(topText: textFieldTop.text!, bottomText: textFieldBottom.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
+        print("saving Meme")
     }
-
+    // does this need a presentViewController for the activity view
+    
+    
+    
 }
 
 
