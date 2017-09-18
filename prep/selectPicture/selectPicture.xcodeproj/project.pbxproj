@@ -12,7 +12,6 @@
 		13F9B6B11F4B8EA6000ED3AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F9B6AF1F4B8EA6000ED3AC /* Main.storyboard */; };
 		13F9B6B31F4B8EA6000ED3AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13F9B6B21F4B8EA6000ED3AC /* Assets.xcassets */; };
 		13F9B6B61F4B8EA6000ED3AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F9B6B41F4B8EA6000ED3AC /* LaunchScreen.storyboard */; };
-		13F9B6C11F674E8E000ED3AC /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9B6C01F674E8D000ED3AC /* ActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +22,6 @@
 		13F9B6B21F4B8EA6000ED3AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13F9B6B51F4B8EA6000ED3AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13F9B6B71F4B8EA6000ED3AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		13F9B6C01F674E8D000ED3AC /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +56,6 @@
 			children = (
 				13F9B6AB1F4B8EA6000ED3AC /* AppDelegate.swift */,
 				13F9B6AD1F4B8EA6000ED3AC /* ViewController.swift */,
-				13F9B6C01F674E8D000ED3AC /* ActivityViewController.swift */,
 				13F9B6AF1F4B8EA6000ED3AC /* Main.storyboard */,
 				13F9B6B21F4B8EA6000ED3AC /* Assets.xcassets */,
 				13F9B6B41F4B8EA6000ED3AC /* LaunchScreen.storyboard */,
@@ -141,7 +138,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				13F9B6AE1F4B8EA6000ED3AC /* ViewController.swift in Sources */,
-				13F9B6C11F674E8E000ED3AC /* ActivityViewController.swift in Sources */,
 				13F9B6AC1F4B8EA6000ED3AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +304,7 @@
 				13F9B6BC1F4B8EA6000ED3AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
