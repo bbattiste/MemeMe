@@ -123,9 +123,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
             imagePicker.sourceType = .camera
             present(imagePicker, animated: true, completion: nil)
+            shareButton.isEnabled = true
         } else {
             print("Camera not present")
-        shareButton.isEnabled = true
         }
     }
     
@@ -184,7 +184,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     // I assume this code is for something in a later lesson, does nothing functionable right now.  Image saves through
-    // activityViewController in shareMemefunction
+    // activityViewController by save feature in shareMemefunction
     func save() {
         let _ = Meme(topText: textFieldTop.text!, bottomText: textFieldBottom.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
         print("saving Meme")
