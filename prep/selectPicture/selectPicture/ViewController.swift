@@ -32,6 +32,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // possibly add NSParagraphStyleAttributeName: NSParagraphStyle()]
     
     // assign attributes to textfields and align center
+    // may want to combine blocks of code for this, not sure what would be a good way
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,7 +73,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return true
     }
     
-    // 
+    // pushes image up when editing with keyboard in bottom textfield
     func keyboardWillShow(_ notification: Notification) {
         if textFieldBottom.isEditing {
             view.frame.origin.y -= getKeyboardHeight(notification)
@@ -82,6 +83,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    // pulls image to original frame when keyboard is removed
     func keyboardWillHide(_ notification:Notification) {
         view.frame.origin.y = 0
     }
@@ -105,7 +107,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
-    // Action image pick from toolbar button
+    // pick an image from photo album by use of toolbar button and enable share button
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -114,9 +116,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         shareButton.isEnabled = true
     }
     
-    
+    // access camera to take picture for app and enable share button
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-        
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
@@ -129,7 +130,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePickerView.image = pickedImage
         }
@@ -160,6 +160,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     
+    // elements needed for the memedImage to be a meme
     struct Meme {
         var topText: String!
         var bottomText: String!
@@ -168,7 +169,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-    // not sure if this what I'm looking for
+    // access activityViewController to share Meme
     @IBAction func shareMeme(_ sender: Any) {
         memedImage = generateMemedImage()
         let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
@@ -182,14 +183,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    // I assume this code is for something in a later lesson, does nothing functionable right now.  Image saves through
+    // activityViewController in shareMemefunction
     func save() {
-        // Create the meme
         let _ = Meme(topText: textFieldTop.text!, bottomText: textFieldBottom.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
         print("saving Meme")
     }
-    // does this need a presentViewController for the activity view
     
-    
+    // code i want to save for later
+    //    override var prefersStatusBarHidden: Bool {
+    //        return true
+    //    }
     
 }
 
