@@ -88,7 +88,7 @@
                         <outlet property="cameraButton" destination="GGM-dO-Zb4" id="VPc-1q-b9B"/>
                         <outlet property="cameraRoll" destination="tMh-fZ-idN" id="bac-6i-u5O"/>
                         <outlet property="imagePickerView" destination="Av2-wF-cyB" id="Ym7-LU-iNe"/>
-                        <outlet property="navBar" destination="BMQ-uJ-f2Z" id="lQz-zt-0Id"/>
+                        <outlet property="navBar" destination="12c-OU-wc0" id="v7W-YT-qsp"/>
                         <outlet property="shareButton" destination="46n-5O-ohu" id="dXT-aZ-tfc"/>
                         <outlet property="textFieldBottom" destination="JYw-3I-mWR" id="qHm-x7-baN"/>
                         <outlet property="textFieldTop" destination="fwE-O0-U1C" id="h3v-CQ-F7Y"/>

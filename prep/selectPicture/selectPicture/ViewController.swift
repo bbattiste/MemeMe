@@ -11,25 +11,25 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
-    // MARK: Outlets
+    // MARK: Outlets and variables
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var textFieldTop: UITextField!
     @IBOutlet weak var textFieldBottom: UITextField!
     @IBOutlet weak var shareButton: UIBarButtonItem!
-    @IBOutlet weak var navBar: UINavigationItem!
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var cameraRoll: UIBarButtonItem!
     
     var memedImage: UIImage!
     
-    //set textfield attribute dictionary
+    // textfield attributes dictionary to format text
     let memeTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: UIColor.black,
         NSForegroundColorAttributeName: UIColor.white,
         NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 23)!,
         NSStrokeWidthAttributeName: -7.5]
-        //NSParagraphStyleAttributeName: NSParagraphStyle()]
+        // possibly add NSParagraphStyleAttributeName: NSParagraphStyle()]
     
     // assign attributes to textfields and align center
     override func viewDidLoad() {
@@ -44,10 +44,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textFieldBottom.delegate = self
     }
     
-    // check if camera is available
+    // check if camera is available and disable share button until image is picked
     override func viewWillAppear(_ animated: Bool) {
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
+        
         if imagePickerView.image == nil {
             shareButton.isEnabled = false
         }
@@ -58,26 +59,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeFromKeyboardNotifications()
     }
     
+    // gets rid of default text when starting to edit textfield
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.text == "TOP" || textField.text == "BOTTOM" {
             textField.text = ""
         }
     }
     
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        if textFieldTop.text == "" {
-//            textFieldTop.text = "TOP"
-//        }
-//        if textFieldBottom.text == "" {
-//            textFieldBottom.text = "BOTTOM"
-//        }
-//    }
-
+    // allows textfield to stop editing and return to app
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
+    // 
     func keyboardWillShow(_ notification: Notification) {
         if textFieldBottom.isEditing {
             view.frame.origin.y -= getKeyboardHeight(notification)
@@ -149,8 +144,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func generateMemedImage() -> UIImage {
         
         // TODO: Hide toolbar and navbar
-        self.navigationController?.navigationBar.isHidden = true
-       // self.navigationController?.isNavigationBarHidden = true
+        navBar.isHidden = true
         toolBar.isHidden = true
         
         // Render view to an image
@@ -160,6 +154,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         
         // TODO: Show toolbar and navbar
+        navBar.isHidden = false
+        toolBar.isHidden = false
         
         return memedImage
     }
