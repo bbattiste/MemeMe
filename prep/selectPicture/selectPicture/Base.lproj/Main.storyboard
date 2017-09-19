@@ -21,12 +21,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Av2-wF-cyB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Av2-wF-cyB">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="JYw-3I-mWR">
-                                <rect key="frame" x="0.0" y="524" width="375" height="24"/>
+                                <rect key="frame" x="0.0" y="548" width="375" height="24"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
@@ -67,19 +67,19 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JYw-3I-mWR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4lk-2y-x2v"/>
                             <constraint firstAttribute="trailing" secondItem="JYw-3I-mWR" secondAttribute="trailing" id="709-A6-JS6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jdP-dP-dHW" secondAttribute="bottom" id="DI0-xa-GGb"/>
                             <constraint firstAttribute="trailing" secondItem="12c-OU-wc0" secondAttribute="trailing" id="Dme-p2-9Yg"/>
-                            <constraint firstItem="jdP-dP-dHW" firstAttribute="top" secondItem="JYw-3I-mWR" secondAttribute="bottom" constant="75" id="E2E-Oh-V6E"/>
                             <constraint firstItem="jdP-dP-dHW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NeN-L0-D3k"/>
                             <constraint firstAttribute="trailing" secondItem="jdP-dP-dHW" secondAttribute="trailing" id="PEq-JH-eva"/>
                             <constraint firstItem="fwE-O0-U1C" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="XTs-i4-4NW"/>
                             <constraint firstAttribute="trailing" secondItem="fwE-O0-U1C" secondAttribute="trailing" id="awf-8J-AYa"/>
                             <constraint firstItem="12c-OU-wc0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="f5a-rq-jJK"/>
                             <constraint firstItem="12c-OU-wc0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rj9-iv-Ozv"/>
+                            <constraint firstItem="jdP-dP-dHW" firstAttribute="top" secondItem="JYw-3I-mWR" secondAttribute="bottom" constant="51" id="w2Z-wS-Kcm"/>
                             <constraint firstItem="fwE-O0-U1C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yBZ-tD-quz"/>
                         </constraints>
                     </view>
