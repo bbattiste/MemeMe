@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dMk-GM-Kxr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Av2-wF-cyB">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <rect key="frame" x="67" y="313" width="240" height="40"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jdP-dP-dHW" userLabel="ToolBar">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
@@ -42,13 +42,13 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" adjustsFontSizeToFit="NO" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="JYw-3I-mWR">
-                                <rect key="frame" x="113" y="486" width="148" height="24"/>
+                                <rect key="frame" x="113" y="442" width="148" height="24"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" adjustsFontSizeToFit="NO" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="fwE-O0-U1C">
-                                <rect key="frame" x="113" y="156" width="148" height="24"/>
+                                <rect key="frame" x="113" y="200" width="148" height="24"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
@@ -76,17 +76,44 @@
                             <constraint firstAttribute="trailing" secondItem="jdP-dP-dHW" secondAttribute="trailing" id="wfv-0z-iEa"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5WJ-lT-2qr">
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="2Uj-gy-VKv">
+                            <connections>
+                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="P1C-Ay-JEN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="TextFieldBottom" destination="JYw-3I-mWR" id="56w-Ex-AX4"/>
                         <outlet property="cameraButton" destination="GGM-dO-Zb4" id="VPc-1q-b9B"/>
                         <outlet property="cameraRoll" destination="tMh-fZ-idN" id="bac-6i-u5O"/>
                         <outlet property="imagePickerView" destination="Av2-wF-cyB" id="Ym7-LU-iNe"/>
+                        <outlet property="navBar" destination="5WJ-lT-2qr" id="uVQ-8A-ZtF"/>
+                        <outlet property="shareButton" destination="2Uj-gy-VKv" id="KXD-HZ-dVT"/>
                         <outlet property="textFieldBottom" destination="JYw-3I-mWR" id="qHm-x7-baN"/>
                         <outlet property="textFieldTop" destination="fwE-O0-U1C" id="h3v-CQ-F7Y"/>
                         <outlet property="toolBar" destination="jdP-dP-dHW" id="oY4-5H-M6I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1007.2" y="43.628185907046479"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nwU-fw-aZ0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dMk-GM-Kxr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZOL-zv-IBf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="S50-JA-DVI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qBa-VE-8OC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="68" y="43.628185907046479"/>
         </scene>

@@ -48,6 +48,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillAppear(_ animated: Bool) {
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
+        if imagePickerView.image == nil {
+            shareButton.isEnabled = false
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -113,6 +116,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
+        shareButton.isEnabled = true
     }
     
     
@@ -125,6 +129,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             present(imagePicker, animated: true, completion: nil)
         } else {
             print("Camera not present")
+        shareButton.isEnabled = true
         }
     }
     
@@ -144,7 +149,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func generateMemedImage() -> UIImage {
         
         // TODO: Hide toolbar and navbar
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.navigationBar.isHidden = true
+       // self.navigationController?.isNavigationBarHidden = true
         toolBar.isHidden = true
         
         // Render view to an image
@@ -167,7 +173,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     // not sure if this what I'm looking for
-    @IBAction func shareMeme(sender: UIButton) {
+    @IBAction func shareMeme(_ sender: Any) {
         memedImage = generateMemedImage()
         let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         present(activityViewController, animated: true, completion: nil)
@@ -178,14 +184,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 self.save()
             }
         }
-    
     }
-    // what would be in any
-    
     
     func save() {
         // Create the meme
-        let meme = Meme(topText: textFieldTop.text!, bottomText: textFieldBottom.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
+        let _ = Meme(topText: textFieldTop.text!, bottomText: textFieldBottom.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
         print("saving Meme")
     }
     // does this need a presentViewController for the activity view
