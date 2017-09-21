@@ -108,26 +108,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
-    // pick an image from photo album by use of toolbar button and enable share button
-    @IBAction func pickAnImageFromAlbum(_ sender: Any) {
+    // function to access image and enable share button
+    func chooseSourceType(sourceType: UIImagePickerControllerSourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = sourceType
         present(imagePicker, animated: true, completion: nil)
         shareButton.isEnabled = true
     }
     
+    // pick an image from photo album
+    @IBAction func pickAnImageFromAlbum(_ sender: Any) {
+        chooseSourceType(sourceType: .photoLibrary)
+    }
+    
     // access camera to take picture for app and enable share button
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
-            imagePicker.sourceType = .camera
-            present(imagePicker, animated: true, completion: nil)
-            shareButton.isEnabled = true
-        } else {
-            print("Camera not present")
-        }
+        chooseSourceType(sourceType: .camera)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
