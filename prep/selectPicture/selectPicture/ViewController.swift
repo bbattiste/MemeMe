@@ -32,17 +32,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // possibly add NSParagraphStyleAttributeName: NSParagraphStyle()]
     
     // assign attributes to textfields and align center
-    // may want to combine blocks of code for this, not sure what would be a good way
+    func configureText(textField: UITextField) {
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
+        textField.delegate = self
+        textField.sizeToFit()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textFieldTop.defaultTextAttributes = memeTextAttributes
-        textFieldTop.textAlignment = .center
-        textFieldTop.delegate = self
-        
-        textFieldBottom.defaultTextAttributes = memeTextAttributes
-        textFieldBottom.textAlignment = .center
-        textFieldBottom.delegate = self
+        configureText(textField: textFieldTop)
+        configureText(textField: textFieldBottom)
     }
     
     // check if camera is available and disable share button until image is picked
