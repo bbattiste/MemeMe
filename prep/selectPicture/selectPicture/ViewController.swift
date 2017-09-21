@@ -122,7 +122,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         chooseSourceType(sourceType: .photoLibrary)
     }
     
-    // access camera to take picture for app and enable share button
+    // access camera to take picture for app
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
         chooseSourceType(sourceType: .camera)
     }
@@ -139,11 +139,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
     
+    // make way to hide utility bars when needed (for memed image)
+    func hideUtilityBars (hide: Bool) {
+        navBar.isHidden = hide
+        toolBar.isHidden = hide
+    }
+    
     func generateMemedImage() -> UIImage {
         
         // Hide toolbar and navbar
-        navBar.isHidden = true
-        toolBar.isHidden = true
+        hideUtilityBars(hide: true)
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -152,8 +157,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         
         // Show toolbar and navbar
-        navBar.isHidden = false
-        toolBar.isHidden = false
+        hideUtilityBars(hide: false)
         
         return memedImage
     }
