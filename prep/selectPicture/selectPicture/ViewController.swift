@@ -27,7 +27,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let memeTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: UIColor.black,
         NSForegroundColorAttributeName: UIColor.white,
-        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 23)!,
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)!,
         NSStrokeWidthAttributeName: -7.5]
         // possibly add NSParagraphStyleAttributeName: NSParagraphStyle()]
     
