@@ -188,6 +188,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // I assume this code is for something in a later lesson, does nothing functionable right now.  Image saves through
     // activityViewController by save feature in shareMemefunction
     func save() {
+        if textFieldTop.text == nil || textFieldBottom.text == nil || imagePickerView.image == nil {
+            return
+        }
         let _ = Meme(topText: textFieldTop.text!, bottomText: textFieldBottom.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
         print("saving Meme")
     }
