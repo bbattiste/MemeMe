@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class ViewController: UIViewController {
 
     // MARK: Outlets and variables
     @IBOutlet weak var imagePickerView: UIImageView!
@@ -35,7 +35,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func configureText(textField: UITextField) {
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .center
-        textField.delegate = self
+        //textField.delegate = self
         textField.sizeToFit()
     }
     
@@ -61,18 +61,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeFromKeyboardNotifications()
     }
     
-    // gets rid of default text when starting to edit textfield
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField.text == "TOP" || textField.text == "BOTTOM" {
-            textField.text = ""
-        }
-    }
-    
-    // allows textfield to stop editing and return to app
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
     
     // pushes image up when editing with keyboard in bottom textfield
     func keyboardWillShow(_ notification: Notification) {
@@ -108,15 +96,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
-    // function to access image and enable share button
-    func chooseSourceType(sourceType: UIImagePickerControllerSourceType) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = sourceType
-        present(imagePicker, animated: true, completion: nil)
-        shareButton.isEnabled = true
-    }
-    
     // pick an image from photo album
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
         chooseSourceType(sourceType: .photoLibrary)
@@ -127,17 +106,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         chooseSourceType(sourceType: .camera)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imagePickerView.image = pickedImage
-        }
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
     
     // make way to hide utility bars when needed (for memed image)
     func hideUtilityBars (hide: Bool) {
@@ -162,6 +130,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     
+
     // elements needed for the memedImage to be a meme
     struct Meme {
         var topText: String!
@@ -203,4 +172,46 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 }
 
 
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+    
+    // function to access image and enable share button
+    func chooseSourceType(sourceType: UIImagePickerControllerSourceType) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = sourceType
+        present(imagePicker, animated: true, completion: nil)
+        shareButton.isEnabled = true
+    }
+    
+    // MARK: ImagePickerControllerDelegate Functions
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imagePickerView.image = pickedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
 
+
+extension ViewController:  UITextFieldDelegate {
+    // gets rid of default text when starting to edit textfield
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.text == "TOP" || textField.text == "BOTTOM" {
+            textField.text = ""
+        }
+    }
+    
+    // allows textfield to stop editing and return to app
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+}
