@@ -130,15 +130,6 @@ class ViewController: UIViewController {
         return memedImage
     }
     
-
-    // elements needed for the memedImage to be a meme
-    struct Meme {
-        var topText: String!
-        var bottomText: String!
-        var originalImage: UIImage!
-        var memedImage: UIImage!
-    }
-    
     
     // access activityViewController to share Meme
     @IBAction func shareMeme(_ sender: Any) {
