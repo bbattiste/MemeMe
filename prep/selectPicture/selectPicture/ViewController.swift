@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     func configureText(textField: UITextField) {
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .center
-        //textField.delegate = self
+        textField.delegate = self
         textField.sizeToFit()
     }
     
