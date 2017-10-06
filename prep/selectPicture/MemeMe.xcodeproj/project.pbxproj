@@ -17,7 +17,7 @@
 
 /* Begin PBXFileReference section */
 		1359DC1A1F75B2A2004E3603 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
-		13F9B6A81F4B8EA6000ED3AC /* selectPicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = selectPicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13F9B6A81F4B8EA6000ED3AC /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F9B6AB1F4B8EA6000ED3AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13F9B6AD1F4B8EA6000ED3AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		13F9B6B01F4B8EA6000ED3AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		13F9B6A91F4B8EA6000ED3AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13F9B6A81F4B8EA6000ED3AC /* selectPicture.app */,
+				13F9B6A81F4B8EA6000ED3AC /* MemeMe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,9 +70,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13F9B6A71F4B8EA6000ED3AC /* selectPicture */ = {
+		13F9B6A71F4B8EA6000ED3AC /* MemeMe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13F9B6BA1F4B8EA6000ED3AC /* Build configuration list for PBXNativeTarget "selectPicture" */;
+			buildConfigurationList = 13F9B6BA1F4B8EA6000ED3AC /* Build configuration list for PBXNativeTarget "MemeMe" */;
 			buildPhases = (
 				13F9B6A41F4B8EA6000ED3AC /* Sources */,
 				13F9B6A51F4B8EA6000ED3AC /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = selectPicture;
+			name = MemeMe;
 			productName = selectPicture;
-			productReference = 13F9B6A81F4B8EA6000ED3AC /* selectPicture.app */;
+			productReference = 13F9B6A81F4B8EA6000ED3AC /* MemeMe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -104,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 13F9B6A31F4B8EA6000ED3AC /* Build configuration list for PBXProject "selectPicture" */;
+			buildConfigurationList = 13F9B6A31F4B8EA6000ED3AC /* Build configuration list for PBXProject "MemeMe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -117,7 +117,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13F9B6A71F4B8EA6000ED3AC /* selectPicture */,
+				13F9B6A71F4B8EA6000ED3AC /* MemeMe */,
 			);
 		};
 /* End PBXProject section */
@@ -270,7 +270,7 @@
 				DEVELOPMENT_TEAM = 9TP9G62K54;
 				INFOPLIST_FILE = selectPicture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bryborg.selectPicture;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bryborg.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -283,7 +283,7 @@
 				DEVELOPMENT_TEAM = 9TP9G62K54;
 				INFOPLIST_FILE = selectPicture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bryborg.selectPicture;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bryborg.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -292,7 +292,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13F9B6A31F4B8EA6000ED3AC /* Build configuration list for PBXProject "selectPicture" */ = {
+		13F9B6A31F4B8EA6000ED3AC /* Build configuration list for PBXProject "MemeMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13F9B6B81F4B8EA6000ED3AC /* Debug */,
@@ -301,7 +301,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13F9B6BA1F4B8EA6000ED3AC /* Build configuration list for PBXNativeTarget "selectPicture" */ = {
+		13F9B6BA1F4B8EA6000ED3AC /* Build configuration list for PBXNativeTarget "MemeMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13F9B6BB1F4B8EA6000ED3AC /* Debug */,
