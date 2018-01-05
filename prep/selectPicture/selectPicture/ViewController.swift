@@ -151,8 +151,15 @@ class ViewController: UIViewController {
         if textFieldTop.text == nil || textFieldBottom.text == nil || imagePickerView.image == nil {
             return
         }
-        let _ = Meme(topText: textFieldTop.text!, bottomText: textFieldBottom.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
+        
+        // create the meme
+        let meme = Meme(topText: textFieldTop.text!, bottomText: textFieldBottom.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
         print("saving Meme")
+        
+        // Add it to the memes array in the Application Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     // code i want to save for later
