@@ -22,4 +22,23 @@ class MemeCollectionViewController : UICollectionViewController {
         memes = appDelegate.memes
     }
     
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.memes.count
+        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VillainCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
+        let memeInCell = self.memes[(indexPath as NSIndexPath).row]
+        
+        // Set the 2 labels and image in MemeCollectionViewCell
+        cell.topLabel.text = memeInCell.topText
+        cell.bottomLabel.text = memeInCell.bottomText
+        cell.selectedImage?.image = memeInCell.originalImage
+        
+        return cell
+    }
+    
+    
 }
