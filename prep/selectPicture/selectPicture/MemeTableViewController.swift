@@ -14,7 +14,7 @@ class MemeTableViewController : UITableViewController {
     
     // For the table, This is an array of meme instances
     
-    var memes: [Meme] = []
+    var memes: [Meme]!
     /// get memes
     
     override func viewDidLoad() {

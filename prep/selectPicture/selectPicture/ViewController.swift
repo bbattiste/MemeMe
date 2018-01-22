@@ -160,6 +160,7 @@ class ViewController: UIViewController {
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
+        print("Meme Count: \(appDelegate.memes.count)")
     }
     
     // code i want to save for later
