@@ -10,10 +10,12 @@ import UIKit
 
 class MemeTableViewController : UITableViewController {
     
-    // outlet lesson 8: slide 4
-    //? Maybe ... something like @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    // MARK: Properties
     
-    var memes: [Meme]!
+    // For the table, This is an array of meme instances
+    
+    var memes: [Meme] = []
+    /// get memes
     
     override func viewDidLoad() {
         super.viewDidLoad()
