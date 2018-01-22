@@ -25,10 +25,10 @@ class ViewController: UIViewController {
     
     // textfield attributes dictionary to format text
     let memeTextAttributes:[String:Any] = [
-        NSStrokeColorAttributeName: UIColor.black,
-        NSForegroundColorAttributeName: UIColor.white,
-        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)!,
-        NSStrokeWidthAttributeName: -7.5]
+        NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
+        NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
+        NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)!,
+        NSAttributedStringKey.strokeWidth.rawValue: -7.5]
         // possibly add NSParagraphStyleAttributeName: NSParagraphStyle()]
     
     // assign attributes to textfields and align center
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
     
     
     // pushes image up when editing with keyboard in bottom textfield
-    func keyboardWillShow(_ notification: Notification) {
+    @objc func keyboardWillShow(_ notification: Notification) {
         if textFieldBottom.isEditing {
             view.frame.origin.y -= getKeyboardHeight(notification)
         }
@@ -73,7 +73,7 @@ class ViewController: UIViewController {
     }
     
     // pulls image to original frame when keyboard is removed
-    func keyboardWillHide(_ notification:Notification) {
+    @objc func keyboardWillHide(_ notification:Notification) {
         view.frame.origin.y = 0
     }
     
