@@ -61,6 +61,11 @@ class ViewController: UIViewController {
         unsubscribeFromKeyboardNotifications()
     }
     
+    //Hide status and power bar
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     
     // pushes image up when editing with keyboard in bottom textfield
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -162,12 +167,6 @@ class ViewController: UIViewController {
         appDelegate.memes.append(meme)
         print("Meme Count: \(appDelegate.memes.count)")
     }
-    
-    // code i want to save for later
-    //    override var prefersStatusBarHidden: Bool {
-    //        return true
-    //    }
-    
 }
 
 
