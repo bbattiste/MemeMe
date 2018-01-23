@@ -156,10 +156,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="PIb-63-cXQ">
+                                    <navigationItem id="PIb-63-cXQ">
                                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="v4y-Rf-bdX">
                                             <connections>
                                                 <action selector="shareMeme:" destination="BYZ-38-t0r" id="Tst-Ku-ElF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="7QP-B2-IzS">
+                                            <connections>
+                                                <segue destination="N9h-KH-D8Z" kind="show" id="2dM-O0-8Wp"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -183,6 +188,7 @@
                         <outlet property="TextFieldBottom" destination="JYw-3I-mWR" id="56w-Ex-AX4"/>
                         <outlet property="cameraButton" destination="GGM-dO-Zb4" id="VPc-1q-b9B"/>
                         <outlet property="cameraRoll" destination="tMh-fZ-idN" id="bac-6i-u5O"/>
+                        <outlet property="cancelButton" destination="7QP-B2-IzS" id="rIg-OI-FgH"/>
                         <outlet property="imagePickerView" destination="Av2-wF-cyB" id="Ym7-LU-iNe"/>
                         <outlet property="navBar" destination="deL-oN-W14" id="2HM-4u-OOs"/>
                         <outlet property="shareButton" destination="v4y-Rf-bdX" id="B3G-pP-Dl0"/>
@@ -213,4 +219,7 @@
             <point key="canvasLocation" x="-735" y="465"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2dM-O0-8Wp"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var cameraRoll: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     var memedImage: UIImage!
     
@@ -54,11 +55,7 @@ class ViewController: UIViewController {
         if imagePickerView.image == nil {
             shareButton.isEnabled = false
         }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        unsubscribeFromKeyboardNotifications()
+        cancelButton.isEnabled = false
     }
     
     //Hide status and power bar
@@ -66,6 +63,10 @@ class ViewController: UIViewController {
         return true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
+    }
     
     // pushes image up when editing with keyboard in bottom textfield
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -150,8 +151,7 @@ class ViewController: UIViewController {
         }
     }
     
-    // I assume this code is for something in a later lesson, does nothing functionable right now.  Image saves through
-    // activityViewController by save feature in shareMemefunction
+    // Image saves through activityViewController by save feature in shareMemefunction
     func save() {
         if textFieldTop.text == nil || textFieldBottom.text == nil || imagePickerView.image == nil {
             return
@@ -166,9 +166,11 @@ class ViewController: UIViewController {
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
         print("Meme Count: \(appDelegate.memes.count)")
+        if appDelegate.memes.count > 0 {
+            cancelButton.isEnabled = true
+        }
     }
 }
-
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
@@ -196,7 +198,6 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     }
     
 }
-
 
 extension ViewController:  UITextFieldDelegate {
     // gets rid of default text when starting to edit textfield
