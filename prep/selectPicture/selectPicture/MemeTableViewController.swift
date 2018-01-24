@@ -35,17 +35,16 @@ class MemeTableViewController : UITableViewController {
         let meme = self.memes[(indexPath as NSIndexPath).row]
         
         // Set the label and image
-        cell.textLabel?.text = meme.topText
+        cell.textLabel?.text = "\(meme.topText!)...\(meme.bottomText!)"
         cell.imageView?.image = meme.memedImage
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "VillainDetailViewController") as! VillainDetailViewController
-        detailController.villain = self.allVillains[(indexPath as NSIndexPath).row]
+
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        detailController.meme = self.memes[(indexPath as NSIndexPath).row]
         self.navigationController!.pushViewController(detailController, animated: true)
     }
-    
 }
