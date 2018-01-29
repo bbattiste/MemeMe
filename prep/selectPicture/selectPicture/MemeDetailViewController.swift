@@ -24,4 +24,17 @@ class MemeDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         self.imageView!.image = self.meme.memedImage
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(MemeDetailViewController.editMeme))
+    }
+    
+    // MARK: Edit Meme
+    
+    @objc func editMeme() {
+        if let navigationController = self.navigationController {
+            navigationController.popToRootViewController(animated: true)
+        }
+    }
 }
