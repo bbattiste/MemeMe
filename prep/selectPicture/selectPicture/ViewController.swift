@@ -169,6 +169,10 @@ class ViewController: UIViewController {
         if appDelegate.memes.count > 0 {
             cancelButton.isEnabled = true
         }
+        
+        let storyBoard = UIStoryboard (name:"Main", bundle:nil)
+        let tabController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+        self.present(tabController, animated: true, completion: nil)
     }
 }
 
