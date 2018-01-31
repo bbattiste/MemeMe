@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TabBarController-->
+        <!--editToMemeTabController-->
         <scene sceneID="EYh-dj-wYX">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" title="TabBarController" id="9ii-aF-IEs" customClass="TabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="editToMemeTabController" title="editToMemeTabController" id="9ii-aF-IEs" customClass="TabBarController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QvI-sm-CYO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -227,6 +227,7 @@
                             <constraint firstItem="fwE-O0-U1C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yBZ-tD-quz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ddC-tu-mHx"/>
                     <connections>
                         <outlet property="TextFieldBottom" destination="JYw-3I-mWR" id="56w-Ex-AX4"/>
                         <outlet property="cameraButton" destination="GGM-dO-Zb4" id="VPc-1q-b9B"/>

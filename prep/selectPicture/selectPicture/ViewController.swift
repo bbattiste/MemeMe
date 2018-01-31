@@ -171,8 +171,8 @@ class ViewController: UIViewController {
         }
         
         let storyBoard = UIStoryboard (name:"Main", bundle:nil)
-        let tabController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-        self.present(tabController, animated: true, completion: nil)
+        let editToMemeTabController = storyBoard.instantiateViewController(withIdentifier: "editToMemeTabController") as! UITabBarController
+        self.present(editToMemeTabController, animated: true, completion: nil)
     }
 }
 
