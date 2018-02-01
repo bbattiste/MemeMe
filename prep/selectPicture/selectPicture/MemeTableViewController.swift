@@ -10,10 +10,14 @@ import UIKit
 
 class MemeTableViewController : UITableViewController {
     
-    // MARK: Properties
+    // MARK: Life Cycle
     
     // For the table, This is an array of meme instances
     var memes: [Meme]!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     // get memes
     override func viewDidLoad() {

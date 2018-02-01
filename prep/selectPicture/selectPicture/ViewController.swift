@@ -56,6 +56,7 @@ class ViewController: UIViewController {
             shareButton.isEnabled = false
         }
         cancelButton.isEnabled = false
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     //Hide status and power bar

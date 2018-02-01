@@ -10,11 +10,17 @@ import UIKit
 
 class MemeCollectionViewController : UICollectionViewController {
     
-    // outlet lesson 8: slide 4
+    // MARK: Outlets
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
-    // Variable
+    // Mark: Properties
     var memes: [Meme]!
+    
+    // MARK: Life Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     override func viewDidLoad() {
          super.viewDidLoad()
