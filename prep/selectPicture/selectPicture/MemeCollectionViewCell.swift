@@ -11,8 +11,6 @@ import UIKit
 class MemeCollectionViewCell: UICollectionViewCell {
     
     // MARK: Outlets
-    
-    @IBOutlet var topLabel: UILabel!
-    @IBOutlet var bottomLabel: UILabel!
-    @IBOutlet var selectedImage: UIImageView!
+
+    @IBOutlet var imageView: UIImageView!
 }

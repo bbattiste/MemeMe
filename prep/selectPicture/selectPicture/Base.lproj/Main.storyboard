@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="-735" y="-224"/>
         </scene>
-        <!--Memes-->
+        <!--Meme Table View Controller-->
         <scene sceneID="aRA-uq-7qZ">
             <objects>
-                <tableViewController storyboardIdentifier="MemeTableViewController" id="N9h-KH-D8Z" customClass="MemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MemeTableViewController" title="Meme Table View Controller" id="N9h-KH-D8Z" customClass="MemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mni-9K-b5e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,28 +116,46 @@
             </objects>
             <point key="canvasLocation" x="1125.5999999999999" y="102.99850074962519"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Meme Collection View Controller-->
         <scene sceneID="U8f-Bs-v1h">
             <objects>
-                <collectionViewController id="auv-5G-xtR" sceneMemberID="viewController">
+                <collectionViewController id="auv-5G-xtR" customClass="MemeCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="H6L-qr-I4b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8g0-8U-nOZ">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yZB-if-P8Z">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollectionViewCell" id="yZB-if-P8Z" customClass="MemeCollectionViewCell" customModule="MemeMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lIi-6d-U90">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="3Ip-My-P0o"/>
+                                                <constraint firstAttribute="height" constant="100" id="80d-8G-5SG"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="lIi-6d-U90" firstAttribute="leading" secondItem="yZB-if-P8Z" secondAttribute="leading" id="Qq7-Kr-BcC"/>
+                                    <constraint firstAttribute="trailing" secondItem="lIi-6d-U90" secondAttribute="trailing" id="ULm-wJ-The"/>
+                                    <constraint firstAttribute="bottom" secondItem="lIi-6d-U90" secondAttribute="bottom" id="i8V-1t-GGj"/>
+                                    <constraint firstItem="lIi-6d-U90" firstAttribute="top" secondItem="yZB-if-P8Z" secondAttribute="top" id="nXf-2X-jzR"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="lIi-6d-U90" id="RQC-rI-DeM"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -149,7 +167,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5G-0l-5Ti" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31" y="465"/>
+            <point key="canvasLocation" x="29.600000000000001" y="464.6176911544228"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

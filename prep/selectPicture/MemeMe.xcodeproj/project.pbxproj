@@ -66,10 +66,10 @@
 			children = (
 				1359DC1A1F75B2A2004E3603 /* Meme.swift */,
 				13F9B6AB1F4B8EA6000ED3AC /* AppDelegate.swift */,
-				13B63F142008119200496755 /* MemeCollectionViewCell.swift */,
 				13F9B6AD1F4B8EA6000ED3AC /* ViewController.swift */,
 				1310E41E1FFF4336007F8841 /* MemeTableViewController.swift */,
 				1310E41C1FFF417D007F8841 /* MemeCollectionViewController.swift */,
+				13B63F142008119200496755 /* MemeCollectionViewCell.swift */,
 				13B63F1620094C7100496755 /* MemeDetailViewController.swift */,
 				13F9B6AF1F4B8EA6000ED3AC /* Main.storyboard */,
 				13F9B6B21F4B8EA6000ED3AC /* Assets.xcassets */,
