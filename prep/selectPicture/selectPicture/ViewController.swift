@@ -55,8 +55,16 @@ class ViewController: UIViewController {
         if imagePickerView.image == nil {
             shareButton.isEnabled = false
         }
+        
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
         cancelButton.isEnabled = false
+        if appDelegate.memes.count > 0 {
+            cancelButton.isEnabled = true
+        }
+        
         self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     //Hide status and power bar
@@ -167,10 +175,7 @@ class ViewController: UIViewController {
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
         print("Meme Count: \(appDelegate.memes.count)")
-        if appDelegate.memes.count > 0 {
-            cancelButton.isEnabled = true
-        }
-        
+
         let storyBoard = UIStoryboard (name:"Main", bundle:nil)
         let editToMemeTabController = storyBoard.instantiateViewController(withIdentifier: "editToMemeTabController") as! UITabBarController
         self.present(editToMemeTabController, animated: true, completion: nil)
