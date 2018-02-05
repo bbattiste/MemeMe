@@ -38,9 +38,9 @@ class MemeDetailViewController: UIViewController {
         let memeEditViewController = storyboard?.instantiateViewController(withIdentifier: "MemeEdit") as! ViewController
         
         // Pass relevant values to destination View Controller by using the created Instance
-        memeEditViewController.memedImage = self.meme.memedImage!
-        memeEditViewController.textFieldTop.text = self.meme.topText!
-        memeEditViewController.textFieldBottom.text = self.meme.bottomText!
+//        memeEditViewController.memedImage = meme.memedImage!
+//        memeEditViewController.textFieldTop.text = meme.topText!
+//        memeEditViewController.textFieldBottom.text = meme.bottomText!
         
         // Pass the created instance to current navigation stack
         navigationController?.pushViewController(memeEditViewController, animated: true)
