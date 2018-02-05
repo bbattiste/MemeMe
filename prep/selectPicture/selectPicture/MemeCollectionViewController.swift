@@ -11,7 +11,7 @@ import UIKit
 class MemeCollectionViewController : UICollectionViewController {
     
     // MARK: Outlets
-//    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     // Mark: Properties
     var memes: [Meme]!
@@ -27,13 +27,24 @@ class MemeCollectionViewController : UICollectionViewController {
 
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
-//
-//        let space:CGFloat = 3.0
-//        let dimension = (view.frame.size.width - (2 * space)) / 3.0
-//
-//        flowLayout.minimumInteritemSpacing = space
-//        flowLayout.minimumLineSpacing = space
-//        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        
+        let space:CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem(rawValue: 4)!, target: self, action: #selector(MemeCollectionViewController.addMeme))
+    }
+    //MARK: Add Meme
+    
+    @objc func addMeme() {
+        // Create a instance of Destination View Controller
+        let memeEditViewController = storyboard?.instantiateViewController(withIdentifier: "MemeEdit") as! ViewController
+        
+        // Pass the created instance to current navigation stack
+        navigationController?.pushViewController(memeEditViewController, animated: true)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

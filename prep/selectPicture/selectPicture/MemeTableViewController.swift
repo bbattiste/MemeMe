@@ -26,20 +26,13 @@ class MemeTableViewController : UITableViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
         
-        super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem(rawValue: 4)!, target: self, action: #selector(MemeTableViewController.addMeme))
-            
-            //UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(MemeDetailViewController.addMeme))
     }
         //MARK: Add Meme
         
         @objc func addMeme() {
             // Create a instance of Destination View Controller
             let memeEditViewController = storyboard?.instantiateViewController(withIdentifier: "MemeEdit") as! ViewController
-            
-            // Pass relevant values to destination View Controller by using the created Instance
-            //memeEditViewController.memedImage = meme.originalImage!
-            //memeEditViewController.textFieldTop.text = meme.topText!
             
             // Pass the created instance to current navigation stack
             navigationController?.pushViewController(memeEditViewController, animated: true)
