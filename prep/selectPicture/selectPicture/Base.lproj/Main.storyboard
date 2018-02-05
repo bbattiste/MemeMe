@@ -67,7 +67,7 @@
                             <outlet property="delegate" destination="N9h-KH-D8Z" id="3lM-mq-Fa4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Memes" id="oNV-F0-1Cs"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="oNV-F0-1Cs"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUs-qO-PaS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,7 +116,7 @@
             </objects>
             <point key="canvasLocation" x="1125.5999999999999" y="102.99850074962519"/>
         </scene>
-        <!--Meme Collection View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="U8f-Bs-v1h">
             <objects>
                 <collectionViewController id="auv-5G-xtR" customClass="MemeCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -163,7 +163,7 @@
                             <outlet property="delegate" destination="auv-5G-xtR" id="GNk-yI-ZUS"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="lYi-mv-23k"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="lYi-mv-23k"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5G-0l-5Ti" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,13 +188,13 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JYw-3I-mWR">
                                 <rect key="frame" x="0.0" y="548" width="375" height="24"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fwE-O0-U1C">
                                 <rect key="frame" x="0.0" y="95" width="375" height="24"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jdP-dP-dHW" userLabel="ToolBar">
