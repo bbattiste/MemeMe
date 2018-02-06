@@ -13,6 +13,7 @@ class MemeDetailViewController: UIViewController {
     // MARK: Properties
     
     var meme: Meme!
+    var memeToEdit: Meme?
     
     // MARK: Outlets
     
@@ -38,7 +39,7 @@ class MemeDetailViewController: UIViewController {
         let memeEditViewController = storyboard?.instantiateViewController(withIdentifier: "MemeEdit") as! ViewController
         
         // Pass relevant values to destination View Controller by using the created Instance
-//        memeEditViewController.memedImage = meme.memedImage!
+        memeEditViewController.imagePickerView.image = meme.originalImage
 //        memeEditViewController.textFieldTop.text = meme.topText!
 //        memeEditViewController.textFieldBottom.text = meme.bottomText!
         
