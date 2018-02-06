@@ -26,23 +26,23 @@ class MemeDetailViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(MemeDetailViewController.editMeme))
-//    }
-//    
-//     //MARK: Edit Meme
-//    
-//    @objc func editMeme() {
-//        // Create a instance of Destination View Controller
-//        let memeEditViewController = storyboard?.instantiateViewController(withIdentifier: "MemeEdit") as! ViewController
-//        
-//        // Pass relevant values to destination View Controller by using the created Instance
-//        memeEditViewController.imagePickerView.image = meme.originalImage
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.plain, target: self, action: #selector(MemeDetailViewController.editMeme))
+    }
+    
+     //MARK: Edit Meme
+    
+    @objc func editMeme() {
+        // Create a instance of Destination View Controller
+        let memeEditViewController = storyboard?.instantiateViewController(withIdentifier: "MemeEdit") as! ViewController
+        
+        // Pass relevant values to destination View Controller by using the created Instance
+//        memeEditViewController.imagePickerView.image = meme.originalImage!
 //        memeEditViewController.textFieldTop.text = meme.topText!
 //        memeEditViewController.textFieldBottom.text = meme.bottomText!
-//        
-//        // Pass the created instance to current navigation stack
-//        navigationController?.pushViewController(memeEditViewController, animated: true)
-//    }
+        
+        // Pass the created instance to current navigation stack
+        navigationController?.pushViewController(memeEditViewController, animated: true)
+    }
 }
