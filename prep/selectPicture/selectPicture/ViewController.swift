@@ -23,8 +23,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     var memedImage: UIImage!
-    var memeToEdit: Meme?
-
     
     // textfield attributes dictionary to format text
     let memeTextAttributes:[String:Any] = [
@@ -67,10 +65,6 @@ class ViewController: UIViewController {
         
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.navigationBar.isHidden = true
-        
-        if memeToEdit != nil {
-            imagePickerView.image = memeToEdit?.originalImage
-        }
     }
     
     //Hide status and power bar
