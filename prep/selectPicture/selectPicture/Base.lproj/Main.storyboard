@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9ii-aF-IEs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -219,7 +219,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="7QP-B2-IzS">
                                             <connections>
-                                                <segue destination="9ii-aF-IEs" kind="show" id="qTS-9n-vJC"/>
+                                                <action selector="cancel" destination="BYZ-38-t0r" id="U4u-O3-8Xo"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -255,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2956" y="103"/>
+            <point key="canvasLocation" x="2086" y="103"/>
         </scene>
         <!--Collection-->
         <scene sceneID="IP1-uL-f6H">

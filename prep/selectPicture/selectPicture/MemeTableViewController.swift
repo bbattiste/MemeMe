@@ -35,7 +35,7 @@ class MemeTableViewController : UITableViewController {
             let memeEditViewController = storyboard?.instantiateViewController(withIdentifier: "MemeEdit") as! ViewController
             
             // Pass the created instance to current navigation stack
-            navigationController?.pushViewController(memeEditViewController, animated: true)
+            present(memeEditViewController, animated: true, completion: nil)
     }
     
     // MARK: Table View Data Source

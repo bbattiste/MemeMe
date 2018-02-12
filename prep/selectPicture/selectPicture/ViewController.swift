@@ -52,19 +52,7 @@ class ViewController: UIViewController {
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
         
-        if imagePickerView.image == nil {
-            shareButton.isEnabled = false
-        }
-        
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
-        cancelButton.isEnabled = false
-        if appDelegate.memes.count > 0 {
-            cancelButton.isEnabled = true
-        }
-        
-        self.tabBarController?.tabBar.isHidden = true
-        self.navigationController?.navigationBar.isHidden = true
+        shareButton.isEnabled = (imagePickerView.image != nil)
     }
     
     //Hide status and power bar
@@ -82,7 +70,7 @@ class ViewController: UIViewController {
         if textFieldBottom.isEditing {
             view.frame.origin.y -= getKeyboardHeight(notification)
         }
-        if textFieldTop.isEditing {
+        else if textFieldTop.isEditing {
             view.frame.origin.y = 0
         }
     }
@@ -105,10 +93,10 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
     
+    // Remove all observers
     func unsubscribeFromKeyboardNotifications() {
         
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self)
     }
     
     // pick an image from photo album
@@ -176,9 +164,11 @@ class ViewController: UIViewController {
         appDelegate.memes.append(meme)
         print("Meme Count: \(appDelegate.memes.count)")
 
-        let storyBoard = UIStoryboard (name:"Main", bundle:nil)
-        let editToMemeTabController = storyBoard.instantiateViewController(withIdentifier: "editToMemeTabController") as! UITabBarController
-        self.present(editToMemeTabController, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func cancel() {
+        dismiss(animated: true, completion: nil)
     }
 }
 

@@ -44,7 +44,7 @@ class MemeCollectionViewController : UICollectionViewController {
         let memeEditViewController = storyboard?.instantiateViewController(withIdentifier: "MemeEdit") as! ViewController
         
         // Pass the created instance to current navigation stack
-        navigationController?.pushViewController(memeEditViewController, animated: true)
+        present(memeEditViewController, animated: true, completion: nil)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
