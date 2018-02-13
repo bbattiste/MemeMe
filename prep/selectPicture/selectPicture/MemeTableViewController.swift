@@ -18,6 +18,8 @@ class MemeTableViewController : UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         // update memes array with new data
         self.tableView.reloadData()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        memes = appDelegate.memes
     }
     
     // get memes
@@ -26,7 +28,8 @@ class MemeTableViewController : UITableViewController {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
-        
+    
+        // Add plus sign for the add symbol
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem(rawValue: 4)!, target: self, action: #selector(MemeTableViewController.addMeme))
     }
         //MARK: Add Meme
