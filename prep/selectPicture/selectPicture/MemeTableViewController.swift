@@ -16,7 +16,8 @@ class MemeTableViewController : UITableViewController {
     var memes: [Meme]!
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
+        // update memes array with new data
+        self.tableView.reloadData()
     }
     
     // get memes
@@ -41,6 +42,7 @@ class MemeTableViewController : UITableViewController {
     // MARK: Table View Data Source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("tableView numberOfRowsInSection: \(self.memes.count)")
         return self.memes.count
     }
     
@@ -53,6 +55,8 @@ class MemeTableViewController : UITableViewController {
         cell.textLabel?.text = "\(meme.topText!)...\(meme.bottomText!)"
         cell.imageView?.image = meme.memedImage
         
+        print("tableView cell text nil? \(cell.textLabel?.text == nil)")
+        print("tableView cell image nil? \(cell.imageView?.image == nil)")
         return cell
     }
     
