@@ -138,12 +138,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lIi-6d-U90">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lIi-6d-U90">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="lIi-6d-U90" firstAttribute="leading" secondItem="yZB-if-P8Z" secondAttribute="leading" id="DYf-it-Qfv"/>
+                                    <constraint firstAttribute="trailing" secondItem="lIi-6d-U90" secondAttribute="trailing" id="OGk-mt-MPp"/>
+                                    <constraint firstAttribute="bottom" secondItem="lIi-6d-U90" secondAttribute="bottom" id="i6X-Of-szA"/>
+                                    <constraint firstItem="lIi-6d-U90" firstAttribute="top" secondItem="yZB-if-P8Z" secondAttribute="top" id="xxN-xf-Puq"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="lIi-6d-U90" id="RQC-rI-DeM"/>
                                 </connections>
