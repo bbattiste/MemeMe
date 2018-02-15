@@ -15,11 +15,17 @@ class MemeTableViewController : UITableViewController {
     // For the table, This is an array of meme instances
     var memes: [Meme]!
     
-    override func viewWillAppear(_ animated: Bool) {
-        // update memes array with new data
-        self.tableView.reloadData()
+//    override func viewWillAppear(_ animated: Bool) {
+//        // update memes array with new data
+//        self.tableView.reloadData()
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        memes = appDelegate.memes
+//    }
+
+    override func viewDidAppear(_ animated: Bool) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
+        self.tableView.reloadData()
     }
     
     // get memes

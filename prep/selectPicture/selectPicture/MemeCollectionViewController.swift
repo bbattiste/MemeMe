@@ -21,6 +21,8 @@ class MemeCollectionViewController : UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         // update memes array with new data
         self.collectionView?.reloadData()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        memes = appDelegate.memes
     }
     
     override func viewDidLoad() {
