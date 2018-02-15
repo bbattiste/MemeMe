@@ -19,6 +19,9 @@ class MemeCollectionViewController : UICollectionViewController {
     // MARK: Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.tabBarController?.tabBar.isHidden = false
+        
         // update memes array with new data
         self.collectionView?.reloadData()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
