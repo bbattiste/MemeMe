@@ -1,5 +1,5 @@
 # MemeMe
-Create a meme from a picture using the photo library or the camera.  Send to friends or save meme for later use.
+Create a meme from a picture using the photo library or the camera.  Share with friends or save meme for later use.
 
 ## Installation
 - Clone the repository
