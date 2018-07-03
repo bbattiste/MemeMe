@@ -35,14 +35,15 @@ class MemeTableViewController : UITableViewController {
         // Add plus sign for the add symbol
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem(rawValue: 4)!, target: self, action: #selector(MemeTableViewController.addMeme))
     }
-        //MARK: Add Meme
+    
+    //MARK: Add Meme
+    
+    @objc func addMeme() {
+        // Create a instance of Destination View Controller
+        let memeEditViewController = storyboard?.instantiateViewController(withIdentifier: "MemeEdit") as! ViewController
         
-        @objc func addMeme() {
-            // Create a instance of Destination View Controller
-            let memeEditViewController = storyboard?.instantiateViewController(withIdentifier: "MemeEdit") as! ViewController
-            
-            // Pass the created instance to current navigation stack
-            present(memeEditViewController, animated: true, completion: nil)
+        // Pass the created instance to current navigation stack
+        present(memeEditViewController, animated: true, completion: nil)
     }
     
     // MARK: Table View Data Source
